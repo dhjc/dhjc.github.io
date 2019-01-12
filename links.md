@@ -1,5 +1,3 @@
-# Links
-
 Place to store links
 
 ## Data Science
