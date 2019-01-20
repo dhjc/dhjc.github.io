@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Astronomy and Data Science
+title: Data-driven Astronomy Week 1
 published: true
 ---
 
