@@ -34,7 +34,7 @@
                 break;
               case 'pl_radj':
                 if (val[key] === null) {
-                  radii.push(0.5)
+                  radii.push(0.15)
                 } else {
                   radii.push(val[key])
                 }
@@ -94,7 +94,7 @@
            .attr("cy",(d) => (d[1]))
            .attr("r", (d) => 50 * d[3])
            .append("svg:title")
-           .text(function(d) { if(d[3] != 0.5) {return d[2] + ': radius of ' + d[3] + ' Jupiter radii and ' + d[0] + 'AU from ' + system_input; } else {
+           .text(function(d) { if(d[3] != 0.15) {return d[2] + ': radius of ' + d[3] + ' Jupiter radii and ' + d[0] + 'AU from ' + system_input; } else {
           return d[2] + ': unknown radius and ' + d[0] + 'AU from ' + system_input;
         }});
 
@@ -142,7 +142,7 @@
 </style>
 <h1>Exo-System Planet Viewer</h1> 
 <p>Early Prototype, limited functionality. Tested with Kepler-296, HD 10180 & HD 39091</p>
-<p>All planets with unknown radii shown as 0.5 Jupiter Radii (no reason for this number)</p>
+<p>All planets with unknown radii shown as 0.15 Jupiter Radii (no reason for this number)</p>
 <input type="text" id="system" value="Kepler-296">
 <!--<p class="message box">
   Waiting for Data
