@@ -59,7 +59,7 @@
 
         
         // Add your code above this line
-        //document.getElementsByClassName('message')[0].innerHTML=html;
+        d3.select(".info").html(html);
         const w = 1000;
         const h = 500;
         const padding = 60;
@@ -72,9 +72,9 @@
                      .domain([0, d3.max(dataset, (d) => d[1])])
                      .range([h - padding, padding]);
         
-        d3.select("body").select("svg").remove();
+        d3.select(".graph").select("svg").remove();
         
-        const svg = d3.select("body")
+        const svg = d3.select(".graph")
                   .append("svg")
                   .attr("width", w)
                   .attr("height", h);
@@ -82,9 +82,16 @@
             svg.append("text")
                 .attr("x", w / 2 )
                 .attr("y", 20)
+                .attr("class","whitetext")
                 .style("text-anchor", "middle")
                 .text(system_input);
         
+           svg.append("text")
+                .attr("x", w / 2 )
+                .attr("y", h - 20)
+                .attr("class","whitetext")
+                .style("text-anchor", "middle")
+                .text("Distance from " + system_input + " in AU (1 AU = Earth-Sun distance)");
 
         svg.selectAll("circle")
            .data(dataset)
@@ -107,6 +114,7 @@
 
         svg.append("g")
            .attr("transform", "translate(0," + (h - padding) + ")")
+        .attr("class","axisWhite")
            .call(xAxis);
       };
     };
@@ -115,6 +123,29 @@
 
 </script>
 <style>
+  svg {
+    background: black;
+  }
+  
+  .whitetext{
+    fill:white
+  } 
+  circle {
+    fill:white;
+  }
+.axisWhite line{
+  stroke: white;
+}
+
+.axisWhite path{
+  stroke: white;
+}
+
+.axisWhite text{
+  fill: white;
+}  
+
+  
   body {
     text-align: center;
     font-family: "Helvetica", sans-serif;
@@ -152,6 +183,14 @@
     Add Graph
   </button>
 </p>
+
+<div class='graph'>
+  
+</div>
+
+<div class='info'>
+  
+</div>
 
 <p>Data comes from <a href="https://exoplanetarchive.ipac.caltech.edu/">The NASA Exoplanet Archive</a></p> <p>Code developed from the D3 tutorials at the excellent <a href="https://www.freecodecamp.com">freeCodeCamp</a> using <a href="https://codepen.io/dhjc/pen/BMjbbV">CodePen</a></p>
 <p>Created by Dominic Cave (<a href="https://www.dhjc.uk">website<a>, <a href="https://www.github.com/dhjc">github</a>)
