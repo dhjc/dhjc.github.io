@@ -1,0 +1,148 @@
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://d3js.org/d3.v5.js"></script>
+
+</head>
+
+<script>
+  document.addEventListener('DOMContentLoaded',function(){
+    document.getElementById('getMessage').onclick=function(){
+      req=new XMLHttpRequest();
+      system_input = document.getElementById("system").value;
+      url = "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets&select=pl_hostname,pl_radj,pl_name,pl_letter,pl_orbsmax&order=dec&format=json&where=pl_hostname%20like%20%27" + system_input + "%27";
+      req.open("GET",url,true);
+      req.send();
+      req.onload=function(){
+        json=JSON.parse(req.responseText);
+        var html = "";
+        var names = [];
+        var dists = [];
+        var radii = [];
+        var dataset = [];
+        // Add your code below this line
+        json.forEach(function(val) {
+          var keys = Object.keys(val);
+          html += "<div class = 'planet'>";
+          keys.forEach(function(key) {
+            html += "<strong>" + key + "</strong>: " + val[key] + "<br>";
+            switch(key) {
+              case 'pl_name':
+                names.push(val[key])
+                break;
+              case 'pl_orbsmax':
+                dists.push(val[key])
+              case 'pl_radj':
+                if (val[key] === null) {
+                  radii.push('1')
+                } else {
+                  radii.push(val[key])
+                }
+
+                break;
+
+              default:
+                // code block
+            }
+           
+
+
+          });
+          html += "</div><br>";
+
+         });
+          var i;
+          for (i = 0; i < names.length; i++) {
+               dataset.push([dists[i], 250, names[i], radii[i]])
+
+          }
+        
+        // Add your code above this line
+        //document.getElementsByClassName('message')[0].innerHTML=html;
+        const w = 1000;
+        const h = 500;
+        const padding = 60;
+    
+        const xScale = d3.scaleLinear()
+                     .domain([0, d3.max(dataset, (d) => d[0])])
+                     .range([padding, w - padding]);
+    
+        const yScale = d3.scaleLinear()
+                     .domain([0, d3.max(dataset, (d) => d[1])])
+                     .range([h - padding, padding]);
+    
+        const svg = d3.select("body")
+                  .append("svg")
+                  .attr("width", w)
+                  .attr("height", h);
+        
+            svg.append("text")
+                .attr("x", w / 2 )
+                .attr("y", 20)
+                .style("text-anchor", "middle")
+                .text(system_input);
+        
+
+    
+        svg.selectAll("circle")
+           .data(dataset)
+           .enter()
+           .append("circle")
+           .attr("cx", (d) => xScale(d[0]))
+           .attr("cy",(d) => (d[1]))
+           .attr("r", (d) => 50 * d[3])
+           .append("svg:title")
+           .text(function(d) { return d[2] + ': radius of ' + d[3] + 'and ' + d[0] + 'AU from ' + system_input; });
+
+
+
+        const xAxis = d3.axisBottom(xScale);
+        // Add your code below this line
+        const yAxis = undefined;
+        // Add your code above this line
+
+        svg.append("g")
+           .attr("transform", "translate(0," + (h - padding) + ")")
+           .call(xAxis);
+      };
+    };
+  });
+  
+
+</script>
+<style>
+  body {
+    text-align: center;
+    font-family: "Helvetica", sans-serif;
+  }
+  h1 {
+    font-size: 2em;
+    font-weight: bold;
+  }
+  .box {
+    border-radius: 5px;
+    background-color: #eee;
+    padding: 20px 5px;
+  }
+  button {
+    color: white;
+    background-color: #4791d0;
+    border-radius: 5px;
+    border: 1px solid #4791d0;
+    padding: 5px 10px 8px 10px;
+  }
+  button:hover {
+    background-color: #0F5897;
+    border: 1px solid #0F5897;
+  }
+</style>
+<h1>Exoplanet Viewer</h1> 
+<p>Prototype - Tested with Kepler-296, HD 10180 & HD 39091</p>
+<input type="text" id="system" value="Kepler-296">
+<!--<p class="message box">
+  Waiting for Data
+</p>-->
+<p>
+  <button id="getMessage">
+    Add Graph
+  </button>
+</p>
