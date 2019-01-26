@@ -69,7 +69,9 @@
         const yScale = d3.scaleLinear()
                      .domain([0, d3.max(dataset, (d) => d[1])])
                      .range([h - padding, padding]);
-    
+        
+        d3.select("body").select("svg").remove();
+        
         const svg = d3.select("body")
                   .append("svg")
                   .attr("width", w)
@@ -135,8 +137,8 @@
     border: 1px solid #0F5897;
   }
 </style>
-<h1>Exoplanet Viewer</h1> 
-<p>Prototype - Tested with Kepler-296, HD 10180 & HD 39091</p>
+<h1>Exo-System Planet Viewer</h1> 
+<p>Early Prototype, limited functionality. Tested with Kepler-296, HD 10180 & HD 39091</p>
 <input type="text" id="system" value="Kepler-296">
 <!--<p class="message box">
   Waiting for Data
@@ -146,3 +148,6 @@
     Add Graph
   </button>
 </p>
+
+<p>Data comes from <a href="https://exoplanetarchive.ipac.caltech.edu/">The NASA Exoplanet Archive</a></p> <p>Code developed from the D3 tutorials at the excellent <a href="https://www.freecodecamp.com">freeCodeCamp</a> using <a href="https://codepen.io/dhjc/pen/BMjbbV">CodePen</a></p>
+<p>Created by Dominic Cave (<a href="https://www.dhjc.uk">website<a>, <a href="https://www.github.com/dhjc">github</a>)
