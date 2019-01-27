@@ -1,0 +1,24 @@
+
+
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.4/awesomplete.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.4/awesomplete.js" async></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+</head>
+
+<script>
+
+var ajax = new XMLHttpRequest();
+ajax.open("GET", "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets&select=distinct%20pl_hostname&format=json", true);
+ajax.onload = function() {
+	var list = JSON.parse(ajax.responseText).map(function(i) { return i.pl_hostname; });
+	new Awesomplete(document.querySelector("#system"),{ list: list });
+};
+ajax.send();
+
+</script>
+
+<body>
+
+<input class="awesomplete" type="text" id="system" value="KOI-351">
+</body>
