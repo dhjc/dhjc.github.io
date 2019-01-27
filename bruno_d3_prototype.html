@@ -1,10 +1,25 @@
 <head>
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.4/awesomplete.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.4/awesomplete.js" async></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://d3js.org/d3.v5.js"></script>
 
 </head>
 
 <script>
+  
+  var ajax = new XMLHttpRequest();
+ajax.open("GET", "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets&select=distinct%20pl_hostname&format=json", true);
+ajax.onload = function() {
+	var list = JSON.parse(ajax.responseText).map(function(i) { return i.pl_hostname; });
+	new Awesomplete(document.querySelector("#system"),{ list: list });
+};
+ajax.send();
+  
+  
+  
+  
   document.addEventListener('DOMContentLoaded',function(){
     document.getElementById('getMessage').onclick=function(){
       req=new XMLHttpRequest();
@@ -179,7 +194,7 @@
 <p>Early Prototype, limited functionality. Tested with Kepler-296, HD 10180 & HD 39091</p>
 <p>Any of <a href="https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets&select=distinct%20pl_hostname&format=json">the host stars listed here</a> should work.</p>  The pre-filled value (KOI-351) is <a href="https://en.wikipedia.org/wiki/Kepler-90">Kepler-90</a>, <a href="https://en.wikipedia.org/wiki/TRAPPIST-1">TRAPPIST-1</a> is also well known.
 <p>All planets with unknown radii shown as 0.15 Jupiter Radii (no reason for this number)</p>
-<input type="text" id="system" value="KOI-351">
+<input class="awesomplete" type="text" id="system" value="KOI-351">
 <!--<p class="message box">
   Waiting for Data
 </p>-->
