@@ -1,7 +1,4 @@
 ---
-published: false
----
----
 layout: post
 title: Completed Data-driven Astronomy Course
 published: true
