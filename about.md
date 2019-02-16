@@ -5,7 +5,7 @@ permalink: /about/
 published: true
 ---
 
-Coming soon
+Generalist Data Scientist with academic background in both Physics and Social Sciences.
 
 # My MPhys Physics Dissertation
 
