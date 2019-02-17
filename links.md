@@ -4,7 +4,7 @@ Place to store links
 
 [My Exoplanet Visualisation Prototype](https://www.dhjc.uk/bruno_d3_prototype.html), using NASA data and D3.
 
-[My Udacity AI Nanodegree Certificate](https://graduation.udacity.com/confirm/GXKHDJQY)
+[My Udacity Deep Learning Nanodegree Certificate](https://graduation.udacity.com/confirm/GXKHDJQY)
 
 [DataCamp](https://www.datacamp.com)
 
