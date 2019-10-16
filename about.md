@@ -5,7 +5,7 @@ permalink: /about/
 published: true
 ---
 
-Generalist Data Scientist with academic background in both Physics and Social Sciences.
+Senior Data Scientist with academic background in both Physics and Global Politics. Chartered Scientist and member of the [OR Society](https://www.theorsociety.com/). 
 
 # My MPhys Physics Dissertation
 
