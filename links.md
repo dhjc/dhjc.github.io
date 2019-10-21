@@ -14,6 +14,6 @@ https://stackoverflow.com/users/9257070/dhjc)
 
 [My Udacity Deep Learning Nanodegree Certificate](https://graduation.udacity.com/confirm/GXKHDJQY)
 
-[DataCamp](https://www.datacamp.com)
+[Data Sci Guide](https://datasciguide.com)
 
 [Astropy](https://www.astropy.org)
