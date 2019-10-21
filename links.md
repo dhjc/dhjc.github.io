@@ -1,3 +1,10 @@
+---
+layout: page
+title: Links
+permalink: /links/
+published: true
+---
+
 [My Stack Overflow profile](
 https://stackoverflow.com/users/9257070/dhjc)
 
