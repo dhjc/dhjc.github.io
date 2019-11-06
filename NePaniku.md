@@ -5,4 +5,4 @@ permalink: /nepaniku/
 published: true
 ---
 
-# Ne Paniku!
+# Don't Panic!
