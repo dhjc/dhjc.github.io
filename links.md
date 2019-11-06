@@ -17,3 +17,5 @@ https://stackoverflow.com/users/9257070/dhjc)
 [Data Sci Guide](https://datasciguide.com)
 
 [Astropy](https://www.astropy.org)
+
+[Ne Paniku!](https://www.nepaniku.net)
