@@ -5,6 +5,16 @@ permalink: /links/
 published: true
 ---
 
+## Social
+
+[Twitter](
+https://www.twitter.com/dhjc42)
+
+Mastodon:
+* @dhjc@mastodon.cloud
+* @dhjc@data-folks.masto.host
+* @dhjc@awscommunity.social
+
 [My Stack Overflow profile](
 https://stackoverflow.com/users/9257070/dhjc)
 
