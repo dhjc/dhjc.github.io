@@ -10,22 +10,15 @@ published: true
 [Twitter](
 https://www.twitter.com/dhjc42)
 
-Mastodon:
-* @dhjc@mastodon.cloud
-* @dhjc@data-folks.masto.host
-* @dhjc@awscommunity.social
+Mastodon - a few options, should really pick one:
+* [@dhjc@mastodon.cloud](https://mastodon.cloud/@dhjc)
+* [@dhjc@data-folks.masto.host](https://data-folks.masto.host/@dhjc)
+* [@dhjc@awscommunity.social](https://awscommunity.social/@dhjc)
 
 [My Stack Overflow profile](
 https://stackoverflow.com/users/9257070/dhjc)
 
-## Data Science
+[Linked In](https://www.linkedin.com/in/dhjc/)
 
-[My Exoplanet Visualisation Prototype](https://www.dhjc.uk/bruno_d3_prototype.html), using NASA data and D3.
-
-[My Udacity Deep Learning Nanodegree Certificate](https://graduation.udacity.com/confirm/GXKHDJQY)
-
-[Data Sci Guide](https://datasciguide.com)
-
-[Astropy](https://www.astropy.org)
-
-[Ne Paniku!](https://www.nepaniku.net)
+## Cloud / Data Science / Analysis /  Engineering
+[Certifications on Credly](https://www.credly.com/users/dhjc/badges)
